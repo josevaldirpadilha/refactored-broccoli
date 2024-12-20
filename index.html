@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Sharing Page</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>JPFLIX</h1>
+        <form id="videoForm">
+            <input type="text" id="videoTitle" placeholder="Título do Vídeo" required>
+            <input type="url" id="videoURL" placeholder="URL do Vídeo (YouTube)" required>
+            <button type="submit">Poste seu Vídeo</button>
+        </form>
+        <div id="videoList"></div>
+    </div>
+
+    <script>
+        document.getElementById('videoForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const title = document.getElementById('videoTitle').value;
+            const url = document.getElementById('videoURL').value;
+            const videoList = document.getElementById('videoList');
+
+            const videoItem = document.createElement('div');
+            videoItem.classList.add('video-item');
+            
+            const videoTitle = document.createElement('h2');
+            videoTitle.textContent = title;
+            videoItem.appendChild(videoTitle);
+            
+            const videoFrame = document.createElement('iframe');
+            videoFrame.src = url.replace("watch?v=", "embed/");
+            videoFrame.frameBorder = "0";
+            videoFrame.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture";
+            videoFrame.allowFullscreen = true;
+            videoItem.appendChild(videoFrame);
+
+            videoList.appendChild(videoItem);
+
+            document.getElementById('videoForm').reset();
+        });
+    </script>
+    
+</body>
+<p>&copy; 2024 JPFLIX todos os direitos reservado</p>
+</html>

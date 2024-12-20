@@ -1,0 +1,67 @@
+body {
+    font-family: Arial, sans-serif;
+    background-image: url(./img/podio-redondo-de-luz-vermelha-e-fundo-preto-para-simulacao_43614-950.avif);
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    background-image: url(./img/images.jpg);
+    border-radius: 15px;
+}
+
+h1 {
+    font-size: 100px;
+    text-align: center;
+    color: #b90101;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+input[type="text"], input[type="url"] {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #000000;
+    border-radius: 5px;
+}
+
+button {
+    padding: 10px 5px;
+    font-size: 16px;
+    border: none;
+    border-radius: 20px;
+    background-color: #c24a38;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #53e172;
+}
+
+#videoList {
+    margin-top: 20px;
+}
+
+.video-item {
+    margin-bottom: 20px;
+}
+
+.video-item h2 {
+    margin: 0 0 10px;
+}
+
+video {
+    width: 100%;
+    height: 315px;
+}
+
+
